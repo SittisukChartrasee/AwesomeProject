@@ -5,5 +5,5 @@ import { createAppContainer } from 'react-navigation'
 const AppContainer = createAppContainer(AppNavigator);
 
 export default () => {
-  return <AppContainer />
+  return <AppContainer theme="light"/>
 }
