@@ -3,19 +3,17 @@ import createSagaMiddleware from 'redux-saga'
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 
 import reducer from './reducers'
-// import mySaga from './sagas'
+import mySaga from './sagas'
 
-// create the saga middleware
 const sagaMiddleware = createSagaMiddleware()
-// mount it on the Store
+
 const store = createStore(
   reducer,
-  // composeWithDevTools(
-    // applyMiddleware(sagaMiddleware)
-  // )
+  composeWithDevTools(
+    applyMiddleware(sagaMiddleware)
+  )
 )
 
-// then run the saga
-// sagaMiddleware.run(mySaga)
+sagaMiddleware.run(mySaga)
 
 export default store
