@@ -1,2 +1,2 @@
 
-export default (key='', value) => dispatch({ key, value })
+export default (key='', value='') => ({ type: 'TYPE_A', key, value })

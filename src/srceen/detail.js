@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, Button } from 'react-native';
 // import Modal, { ModalContent } from 'react-native-modals'
 import { useSelector } from 'react-redux'
@@ -7,6 +7,12 @@ export default () => {
   const [visible, setVisible] = useState(false)
   const counter = useSelector(state => state)
 
+  useEffect(() => {
+    console.log('ok')
+    return () => {
+      console.log('unmount')
+    }
+  })
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
